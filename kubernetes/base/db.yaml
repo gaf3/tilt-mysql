@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db
+  namespace: mysql
+  labels:
+    app: db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: db
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+      volumes:
+      - name: mysql
+        hostPath:
+          path: /dev/null
+          type: Directory
+      containers:
+      - name: mysql
+        image: mysql:5.7
+        volumeMounts:
+        - name: mysql
+          mountPath: /var/lib/mysql
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3306
+          protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: db
+  namespace: mysql
+spec:
+  selector:
+    app: db
+  type: ClusterIP
+  clusterIP: None
+  ports:
+  - name: mysql
+    port: 3306
+    protocol: TCP
+    targetPort: 3306
