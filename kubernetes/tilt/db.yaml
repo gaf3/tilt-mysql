@@ -9,5 +9,5 @@ spec:
       containers:
       - name: mysql
         env:
-        - name: MYSQL_ALLOW_EMPTY_PASSWORD
-          value: "yes"
+        - name: MYSQL_ROOT_PASSWORD
+          value: "local"

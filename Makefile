@@ -12,4 +12,4 @@ down:
 	tilt down
 
 client:
-	kubectl --namespace mysql exec -it `kubectl --namespace mysql get pod | grep 'db-' | awk '{print $1}'` -- mysql
+	kubectl --namespace mysql exec -it `kubectl --namespace mysql get pod | grep 'db-' | awk '{print $1}'` -- mysql -u root -p

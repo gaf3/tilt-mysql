@@ -15,7 +15,7 @@ A general MySQL instance to use locally with Kubernetes services that expect an 
 
 - `make up` - Starts MySQL by firing up tilt, hit space to see the GUI, maps mysql data dir to data/ here, ctrl-c to exit
 - `make down` - Cleans everything up
-- `make client` - Connects to mysql on server
+- `make client` - Connects to mysql on server (password: local)
 
 # Access
 
