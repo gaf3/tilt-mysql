@@ -12,4 +12,5 @@ down:
 	tilt down
 
 client:
+	kubectx docker-desktop
 	kubectl --namespace mysql exec -it `kubectl --namespace mysql get pod | grep 'db-' | awk '{print $1}'` -- mysql -u root -p
