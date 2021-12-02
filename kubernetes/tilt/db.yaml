@@ -11,7 +11,3 @@ spec:
         env:
         - name: MYSQL_ROOT_PASSWORD
           value: "local"
-      - name: exporter
-        env:
-        - name: DATA_SOURCE_NAME
-          value: "root:local@(localhost:3306)"
