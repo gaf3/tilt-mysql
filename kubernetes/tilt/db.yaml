@@ -11,3 +11,5 @@ spec:
         env:
         - name: MYSQL_ROOT_PASSWORD
           value: "local"
+        - name: MYSQL_USER
+          value: "root@%"

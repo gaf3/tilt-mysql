@@ -20,6 +20,13 @@ spec:
         hostPath:
           path: /dev/null
           type: Directory
+      initContainers:
+      - name: sock
+        image: mysql:8.0.28-oracle
+        command: ["rm", "-f", "/var/lib/mysql/mysql.sock"]
+        volumeMounts:
+        - name: mysql
+          mountPath: /var/lib/mysql
       containers:
       - name: mysql
         image: mysql:8.0.28-oracle
